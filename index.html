@@ -3,15 +3,33 @@
 <head>
     <meta charset="utf-8">
     <title>Ripes Web</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #screen {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+
     <script src="qtloader.js"></script>
+    <script src="Ripes.js"></script>
 </head>
+
 <body>
     <div id="screen"></div>
 
     <script>
         qtLoad({
             qt: {
-                entryFunction: window.createQtAppInstance
+                containerElements: [document.getElementById("screen")],
+                entryFunction: createQtAppInstance
             }
         });
     </script>
